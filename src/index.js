@@ -6,11 +6,10 @@ function format_massage()
 {
     var text_area = $('.message-field');
     var output = $('.message-formatted');
-    var temp_str;
     
     function formated()
     {
-        temp_str = text_area.val()
+        var temp_str = text_area.val()
                             .trim()
                             .replace(/\s+/g," ")
                             .replace(/\n+/g," ")
@@ -21,5 +20,5 @@ function format_massage()
     text_area.keyup(formated);
     
 }
-
-$(document).ready(format_massage);
+$('.message-field').on('input',format_massage);
+//$(document).ready(format_massage);
